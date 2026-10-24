@@ -1,7 +1,7 @@
 PY ?= python3
 .PHONY: install test run bench locust-ui docker
 install:
-	$(PY) -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
+	$(PY) -m venv .venv && .venv/bin/pip install -q --upgrade pip --disable-pip-version-check && .venv/bin/pip install -q --disable-pip-version-check -r requirements-dev.txt
 test:
 	.venv/bin/pytest -q
 run:

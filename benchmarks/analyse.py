@@ -28,4 +28,4 @@ if mp.exists():
         plt.xlabel("Sample"); plt.ylabel("CPU (%)"); plt.title("macOS System CPU Samples")
         plt.grid(True,alpha=.3); plt.tight_layout(); plt.savefig(OUT/"system_cpu.png",dpi=160); plt.close()
 print(d.to_string(index=False))
-print("Charts saved in", OUT)
+print("Charts saved in results/")

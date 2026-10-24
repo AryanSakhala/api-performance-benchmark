@@ -57,7 +57,7 @@ def main():
             rows.append(row); print(row)
     with summary.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
-    print("Saved:", details, summary)
+    print("Saved:", f"results/{details.name}", f"results/{summary.name}")
 
 if __name__ == "__main__":
     main()

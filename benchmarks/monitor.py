@@ -38,7 +38,7 @@ def main():
                         "system_cpu_pct":cpu,"available_memory_mb":round(mem.available/1048576,2),
                         "api_pid":proc.pid if proc else "", "api_cpu_pct":pcpu,"api_rss_mb":rss})
             f.flush(); time.sleep(a.interval)
-    print("Saved", path, "- run while Uvicorn is active for API process metrics")
+    print("Saved", f"results/{path.name}", "- run while Uvicorn is active for API process metrics")
 
 if __name__ == "__main__":
     main()

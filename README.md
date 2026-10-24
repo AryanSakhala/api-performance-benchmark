@@ -1,5 +1,3 @@
 # Expense Audit
 
-Cleans `input/expenses_raw.csv` (duplicates, inconsistent categories, missing dates).
-
-    python3 clean_expenses.py
+Open `expense_audit.ipynb` and run the cells top to bottom. Input: `input/expenses_raw.csv`.

@@ -1,8 +1,0 @@
-{
-  "scenarios": [
-    {"name":"baseline","requests":50,"concurrency":[2,4],"iterations":1000},
-    {"name":"moderate","requests":100,"concurrency":[2,4,8],"iterations":10000},
-    {"name":"high_load","requests":200,"concurrency":[8,16],"iterations":10000},
-    {"name":"compute_heavy","requests":100,"concurrency":[2,4,8],"iterations":50000}
-  ]
-}

@@ -1,3 +1,5 @@
 # Exact vs Approximate Math Benchmark
 
-Reference files. Run `python3 benchmark.py` to write benchmark_results.csv. `RECORDING_SCRIPT.md` is the end-to-end narration script.
+`benchmark.py` writes `benchmark_results.csv` with nanoseconds per call and absolute error.
+
+`visualize.py` reads that CSV and saves three comparison charts: `exp_comparison.png`, `sigmoid_comparison.png`, and `softmax_comparison.png`.

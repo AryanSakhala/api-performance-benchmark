@@ -1,246 +1,341 @@
-# Recording Script: Loan Scenario Comparison (end to end, about 25 minutes)
+# Recording Script: Exact vs Approximate Math Benchmark (end to end, about 28 minutes)
 
-Lines in quotes are spoken aloud, word for word. Lines in [brackets] are actions: do them, do not say them. Announce every action BEFORE you do it (what, where, why), do it, hold the mouse still for 1 second, then describe the result. Nothing is copy-pasted and nothing is cloned: every file is created live.
+Lines in quotes are spoken aloud, word for word. Lines in [brackets] are actions: do them, do not say them. Announce every action BEFORE you do it (what, where, why), do it, hold the mouse still 1 second, then describe the result. Nothing is copy-pasted or cloned: every file is created live. Type the code yourself while looking at the script.
 
-Replace the Part 0 opening with the exact template in the Writer Guidelines. It must finish within 20 seconds, including minimizing the description document.
+Replace the Part 0 opening with the exact template in the Writer Guidelines. It must finish within 20 seconds including minimizing the description.
 
-## Before you press record (do not narrate)
-- Log in as your dedicated tasker macOS user. Neutral Mac name, so no personal name shows anywhere.
-- Menu bar clock shows seconds. Dock visible. Accessibility Inspector pinned to the Dock and running.
-- Desktop is empty: NO deliverables folder yet. You create it on camera.
-- Only the task description document is open. No restricted apps, no TextEdit, no AI tools while recording.
-- Resize each app window to about the middle 60% of the screen, never full screen, so no window covers another, the Dock, or the Inspector for more than 30 seconds. Close each app before opening the next.
-- Typing must stay at 35% of the video or less (script about 19 lines, report 5 lines). Silences must be under 45 seconds.
-- Do not copy-paste anything. Type every line yourself.
+## Before recording (do not narrate)
+- Log in as your tasker macOS user, neutral Mac name, no personal name anywhere.
+- Clock shows seconds. Dock visible. Accessibility Inspector pinned to the Dock and running.
+- Desktop empty: NO deliverables folder yet. Only the task description document open.
+- Resize each app window to about the middle 60% of the screen, never full screen, so no window covers another for more than 30 seconds. Close each app before opening the next.
+- No restricted apps, no TextEdit, no AI while recording, nothing pasted.
+- Typing must stay at 35% of the video or less. Rehearse the typing time. Fallback if too long: leave out the softmax block (the `def softmax` function and the `for size` loop).
+- Silences under 45 seconds. Your timings will differ from the sample numbers in this script: always read your own numbers aloud.
 
 ## Narration pattern for EVERY action
-1. WHAT: "I will click / double-click / right-click / press ..."
-2. WHERE: "... at the top left / in the Dock / in the left sidebar ..."
-3. WHY: "... because ..."
-4. [Move the mouse slowly. Click. Hold still 1 second.]
-5. RESULT: "I clicked it. Now ... is showing / the Terminal printed ..., which means ..."
+WHAT ("I will click / double-click / press ...") + WHERE ("... at the top left / in the Dock ...") + WHY ("... because ..."). [Move slowly, click, hold 1 second.] RESULT ("I clicked it. Now ... is showing / the Terminal printed ..., which means ...").
 
 ---
 
 ## PART 0. Opening (15 to 18 seconds)
-[Task description fills the screen. Mouse rests in the middle of the document.]
-"Hello. In this task I am a loan analyst helping a small business owner compare mortgage options. My goal is to build and compare loan scenarios across different terms and interest rates, and measure the monthly payment and total interest, to identify the cheapest option. I will use Visual Studio Code, Terminal, LibreOffice Calc, and Finder. Now I will minimize this task description."
-"I will move my mouse to the top left corner of this document window, where there are three small colored circles, and click the yellow one, the minimize button, because I want a clear screen."
-[Move. Click yellow. Hold 1 second.]
-"I clicked the yellow button, and the description is minimized into the Dock."
+[Task description fills the screen. Mouse rests in the middle.]
+"Hello. In this task I am a machine learning engineer. My goal is to benchmark exact and approximate versions of exp, sigmoid, and softmax in Python across different input values and sizes, and measure speed and absolute error, to identify the accuracy versus speed trade-off. I will use Visual Studio Code, Terminal, LibreOffice Calc, and Finder. Now I will minimize this task description."
+"I will move my mouse to the top left corner of this window, where there are three small colored circles, and click the yellow one, the minimize button, because I want a clear screen."
+[Click yellow. Hold 1 second.]
+"I clicked it, and the description is minimized into the Dock."
 
-## PART 1. Visual Studio Code: create the folder and write the script (CREATE)
-"My first step is to create my project folder and write a Python script. I will open Visual Studio Code, which I will call VS Code."
-"I will move my mouse to the Dock at the bottom of the screen and click the VS Code icon, the blue ribbon-shaped icon, because I will write my code here."
+## PART 1. Visual Studio Code: create the folder and write the benchmark (CREATE)
+"My first step is to create my project folder and write the benchmark script. I will click the VS Code icon, the blue ribbon-shaped icon, in the Dock at the bottom of the screen, because I will write my code there."
 [Click. Hold 1 second.]
-"VS Code opened in a window, not full screen. I can still see the menu bar and clock at the top, and the Dock at the bottom."
-"I need a folder for my work. I will click File in the menu bar at the very top of the screen, because the Open Folder command is under it."
+"VS Code opened in a window, not full screen. I can still see the clock at the top and the Dock at the bottom."
+"I will click File in the menu bar at the very top of the screen, because Open Folder is under it."
 [Click File. Hold 1 second.]
-"The File menu opened. I will move down to Open Folder and click it."
+"I will click Open Folder."
 [Click. Hold 1 second.]
-"A file dialog opened. In the sidebar on the left, I will click Desktop, because I want the new folder to live on my Desktop."
-[Click Desktop. Hold 1 second.]
-"The Desktop is empty. At the bottom left of the dialog there is a button called New Folder. I will click it, because I need to create the folder."
-[Click New Folder. Hold 1 second.]
-"A box appeared asking for the folder name. I will type: d, e, l, i, v, e, r, a, b, l, e, s, and click the Create button."
+"A file dialog opened. In the sidebar on the left I will click Desktop, because I want my new folder on the Desktop."
+[Click. Hold 1 second.]
+"The Desktop is empty. I will click the New Folder button at the bottom left of the dialog, because I need to create my project folder."
+[Click. Hold 1 second.]
+"A box asks for the folder name. I will type: d, e, l, i, v, e, r, a, b, l, e, s, and click Create."
 [Type deliverables. Click Create. Hold 1 second.]
-"I created a folder named deliverables on the Desktop. It is selected now. I will click the Open button at the bottom right of the dialog, because I want to work inside it."
+"The folder deliverables is created on the Desktop and is selected. I will click the Open button at the bottom right, because I want to work inside it."
 [Click Open. Hold 1 second.]
-"If a prompt asks whether I trust the authors, I will click Yes, I trust the authors, because I just created this folder. [If it does not appear, say: No prompt appeared, so I continue.]"
+"If a prompt asks whether I trust the authors, I will click Yes, I trust the authors, because I just created this folder. [If none appears: No prompt appeared, so I continue.]"
 [Click if shown. Hold 1 second.]
-"VS Code now shows the folder named deliverables in the Explorer panel on the left side, and it is empty."
-"I will click the New File icon, the small page with a plus sign, at the top right of the Explorer panel, because I need to create my script file."
-[Hover 1 second so the label shows, then click. Hold 1 second.]
-"A text box appeared in the Explorer panel. I will type: loan, underscore, scenarios, dot, p, y. Then I will press the Enter key."
-[Type loan_scenarios.py. Press Enter. Hold 1 second.]
-"The file loan underscore scenarios dot p y is created and open in the large editor area on the right."
-"Before I type, I will explain the plan. The script will calculate the monthly payment and the total interest for a loan of two hundred fifty thousand dollars, for four terms: ten, fifteen, twenty, and thirty years, at four interest rates: four and a half, five and a half, six and a half, and seven and a half percent. That makes sixteen scenarios. It will write them to a CSV file."
-"I will now type the script line by line. After each line I will say what it does."
-[VS Code may auto-indent and auto-close brackets and quotes. If it adds an extra closing character, press Delete. Press Shift+Tab to move left after a block.]
+"The Explorer panel on the left shows the folder deliverables, and it is empty. I will click the New File icon, the small page with a plus sign, at the top right of the Explorer panel."
+[Hover until the label shows. Click. Hold 1 second.]
+"I will type: benchmark, dot, p, y, and press Enter."
+[Type benchmark.py. Enter. Hold 1 second.]
+"The file benchmark dot p y is created and open in the editor on the right."
+"Before I type, here is the plan. The script compares exact and approximate versions of three functions. For exp, I compare the exact math dot exp against a six-term Taylor series approximation. For sigmoid, I compare the exact formula against a fast approximation. For softmax, which turns a list of numbers into probabilities, I compare a version built on exact exp against one built on the Taylor exp. For each, I measure speed in nanoseconds per call and absolute error compared with the exact answer, and write everything to a CSV file."
+"I will now type the script line by line, saying what each line does. If VS Code adds an extra closing bracket or quote, I will press Delete. After an indented block I will press Shift and Tab to move back left."
 
-Line 1: "I will type: import, space, csv. This loads the module that writes CSV files."
+L1: "I will type: import, csv, comma, math, comma, time. These modules write CSV files, provide math functions, and measure time."
 ```python
-import csv
+import csv, math, time
 ```
-"I will press Enter twice to leave a blank line."
-Line 3: "I will type: principal, space, equals, space, 250000. This is the loan amount in dollars."
+"Enter twice for a blank line."
+L3: "I will define the Taylor approximation. I type: def, taylor underscore exp, open parenthesis, x, close parenthesis, colon. This function approximates e to the power x using a short series. Enter."
 ```python
-principal = 250000
+def taylor_exp(x):
 ```
-Line 4: "Next: rows, equals, an open and close square bracket. This empty list will hold my results."
+L4: "Indented: term, equals, total, equals, 1.0. Both start at one. Enter."
+```python
+    term = total = 1.0
+```
+L5: "for, k, in, range, open parenthesis, 1, comma, 7, close parenthesis, colon. This adds six terms. Enter."
+```python
+    for k in range(1, 7):
+```
+L6: "term, times equals, x, divided by, k. Each new term is the previous one times x over k. Enter."
+```python
+        term *= x / k
+```
+L7: "total, plus equals, term. Then Enter and Shift and Tab."
+```python
+        total += term
+```
+L8: "return, total. Enter twice."
+```python
+    return total
+```
+L10: "Now softmax. def, softmax, open parenthesis, values, comma, exp, close parenthesis, colon. It takes a list of numbers and the exp function to use. Enter."
+```python
+def softmax(values, exp):
+```
+L11: "top, equals, max, open parenthesis, values, close parenthesis. I subtract the largest value first, which is the standard trick that keeps numbers stable. Enter."
+```python
+    top = max(values)
+```
+L12: "parts, equals, an open square bracket, exp, open parenthesis, v, minus, top, close parenthesis, for, v, in, values, a close square bracket. Enter."
+```python
+    parts = [exp(v - top) for v in values]
+```
+L13: "total, equals, sum, open parenthesis, parts, close parenthesis. Enter."
+```python
+    total = sum(parts)
+```
+L14: "return, an open square bracket, p, divided by, total, for, p, in, parts, a close square bracket. This divides each part by the total so they add up to one. Enter twice and Shift and Tab."
+```python
+    return [p / total for p in parts]
+```
+L16: "Now the sigmoid functions. sigmoid, equals, lambda, x, colon, 1, divided by, an open parenthesis, 1, plus, math dot exp, open parenthesis, minus x, close parenthesis, close parenthesis. This is the exact sigmoid. Enter."
+```python
+sigmoid = lambda x: 1 / (1 + math.exp(-x))
+```
+L17: "fast underscore sigmoid, equals, lambda, x, colon, 0.5, plus, x, divided by, an open parenthesis, 2, times, an open parenthesis, 1, plus, abs, open parenthesis, x, close parenthesis, close parenthesis, close parenthesis. This is a cheap approximation with no exp inside. Enter twice."
+```python
+fast_sigmoid = lambda x: 0.5 + x / (2 * (1 + abs(x)))
+```
+L19: "Now a list of the four methods to compare. methods, equals, an open square bracket. Enter. Each entry says: the function name, the method name, the function to time, and the exact function to compare against."
+```python
+methods = [
+```
+L20: "Indented: an open parenthesis, quote exp quote, comma, quote exact quote, comma, math dot exp, comma, math dot exp, close parenthesis, comma. Enter."
+```python
+    ("exp", "exact", math.exp, math.exp),
+```
+L21: "Next: quote exp quote, quote taylor quote, taylor underscore exp, math dot exp. Enter."
+```python
+    ("exp", "taylor", taylor_exp, math.exp),
+```
+L22: "quote sigmoid quote, quote exact quote, sigmoid, sigmoid. Enter."
+```python
+    ("sigmoid", "exact", sigmoid, sigmoid),
+```
+L23: "quote sigmoid quote, quote fast quote, fast underscore sigmoid, sigmoid. Enter, then Shift and Tab."
+```python
+    ("sigmoid", "fast", fast_sigmoid, sigmoid),
+```
+L24: "A close square bracket. Enter twice."
+```python
+]
+```
+L26: "rows, equals, an empty list. This will hold all measurements. Enter."
 ```python
 rows = []
 ```
-"Enter twice for a blank line."
-Line 6: "Now the outer loop. I will type: for, space, years, space, in, space, an open parenthesis, 10, comma, 15, comma, 20, comma, 30, a close parenthesis, colon. This repeats the steps for each loan term. I press Enter, and VS Code indents the next line by four spaces."
+L27: "for, func, comma, method, comma, approx, comma, exact, in, methods, colon. This loops over the four methods. Enter."
 ```python
-for years in (10, 15, 20, 30):
+for func, method, approx, exact in methods:
 ```
-Line 7: "The inner loop: for, space, rate, space, in, an open parenthesis, 4.5, comma, 5.5, comma, 6.5, comma, 7.5, a close parenthesis, colon. This repeats for each interest rate, in percent. Enter."
+L28: "for, x, in, an open parenthesis, minus 6, comma, minus 2, comma, 0, comma, 2, comma, 6, close parenthesis, colon. These are my five test inputs. Enter."
 ```python
-    for rate in (4.5, 5.5, 6.5, 7.5):
+    for x in (-6, -2, 0, 2, 6):
 ```
-Line 8: "Now the monthly rate: r, equals, rate, divided by, 1200. Dividing by twelve months and by a hundred turns a yearly percent into a monthly decimal. Enter."
+L29: "start, equals, time dot perf underscore counter, open and close parentheses. This reads a precise clock. Enter."
 ```python
-        r = rate / 1200
+        start = time.perf_counter()
 ```
-Line 9: "The number of payments: n, equals, years, times, 12. Enter."
+L30: "for, underscore, in, range, open parenthesis, 100000, close parenthesis, colon. I repeat the call one hundred thousand times to get a stable time. Enter."
 ```python
-        n = years * 12
+        for _ in range(100000):
 ```
-Line 10: "The payment formula: payment, equals, principal, times, r, divided by, an open parenthesis, 1, minus, an open parenthesis, 1, plus, r, a close parenthesis, two asterisks, minus n, a close parenthesis. This is the standard formula for a fixed monthly loan payment. Enter."
+L31: "approx, open parenthesis, x, close parenthesis. Enter, then Shift and Tab."
 ```python
-        payment = principal * r / (1 - (1 + r) ** -n)
+            approx(x)
 ```
-Line 11: "I will save one result row: rows, dot, append, an open parenthesis, an open square bracket, years, comma, rate, comma, round of payment and 2, comma, round of payment times n minus principal and 2, a close square bracket, a close parenthesis. The last value is the total interest: all payments added up, minus the original loan."
+L32: "ns, equals, an open parenthesis, time dot perf underscore counter, open and close parentheses, minus, start, close parenthesis, divided by, 100000, times, 1e9. This converts total seconds into nanoseconds per call. Enter."
 ```python
-        rows.append([years, rate, round(payment, 2), round(payment * n - principal, 2)])
+        ns = (time.perf_counter() - start) / 100000 * 1e9
 ```
-"I will press Enter twice, then press Shift and Tab to move back to the left edge."
-Line 13: "Now I write the file. I will type: with, space, open, open parenthesis, quote, loan underscore scenarios dot csv, quote, comma, quote w quote, comma, newline equals two quotes, close parenthesis, as, f, colon. The w means write. Enter."
+L33: "rows, dot, append, open parenthesis, an open square bracket, func, comma, method, comma, x, comma, round of ns and 1, comma, abs of approx of x minus exact of x, a close square bracket, a close parenthesis. The last value is the absolute error. Then Enter twice and Shift and Tab twice."
 ```python
-with open("loan_scenarios.csv", "w", newline="") as f:
+        rows.append([func, method, x, round(ns, 1), abs(approx(x) - exact(x))])
 ```
-Line 14: "writer, equals, csv, dot, writer, open parenthesis, f, close parenthesis. Enter."
+L35: "Now softmax. for, size, in, an open parenthesis, 10, comma, 100, comma, 1000, close parenthesis, colon. These are the vector sizes. Enter."
+```python
+for size in (10, 100, 1000):
+```
+L36: "values, equals, an open square bracket, an open parenthesis, i, percent sign, 13, close parenthesis, minus 6, for, i, in, range, open parenthesis, size, close parenthesis, a close square bracket. This builds a list of numbers between minus 6 and 6. Enter."
+```python
+    values = [(i % 13) - 6 for i in range(size)]
+```
+L37: "reference, equals, softmax, open parenthesis, values, comma, math dot exp, close parenthesis. This is the exact answer to compare against. Enter."
+```python
+    reference = softmax(values, math.exp)
+```
+L38: "for, method, comma, exp, in, an open parenthesis, an open parenthesis, quote exact quote, comma, math dot exp, close parenthesis, comma, an open parenthesis, quote taylor quote, comma, taylor underscore exp, close parenthesis, close parenthesis, colon. Enter."
+```python
+    for method, exp in (("exact", math.exp), ("taylor", taylor_exp)):
+```
+L39: "start, equals, time dot perf underscore counter, open and close parentheses. Enter."
+```python
+        start = time.perf_counter()
+```
+L40: "for, underscore, in, range, open parenthesis, 200, close parenthesis, colon. Two hundred repeats is enough for a whole vector. Enter."
+```python
+        for _ in range(200):
+```
+L41: "result, equals, softmax, open parenthesis, values, comma, exp, close parenthesis. Enter, then Shift and Tab."
+```python
+            result = softmax(values, exp)
+```
+L42: "ns, equals, an open parenthesis, time dot perf underscore counter, open and close parentheses, minus, start, close parenthesis, divided by, 200, times, 1e9. Enter."
+```python
+        ns = (time.perf_counter() - start) / 200 * 1e9
+```
+L43: "error, equals, max, open parenthesis, abs, open parenthesis, a, minus, b, close parenthesis, for, a, comma, b, in, zip, open parenthesis, result, comma, reference, close parenthesis, close parenthesis. This is the largest difference from the exact softmax. Enter."
+```python
+        error = max(abs(a - b) for a, b in zip(result, reference))
+```
+L44: "rows, dot, append, open parenthesis, an open square bracket, quote softmax quote, comma, method, comma, size, comma, round of ns and 1, comma, error, a close square bracket, a close parenthesis. Enter twice and Shift and Tab twice."
+```python
+        rows.append(["softmax", method, size, round(ns, 1), error])
+```
+L46: "Now I save the file. with, open, open parenthesis, quote benchmark underscore results dot csv, quote, comma, quote w quote, comma, newline equals two quotes, close parenthesis, as, f, colon. Enter."
+```python
+with open("benchmark_results.csv", "w", newline="") as f:
+```
+L47: "writer, equals, csv dot writer, open parenthesis, f, close parenthesis. Enter."
 ```python
     writer = csv.writer(f)
 ```
-Line 15: "The header row: writer, dot, writerow, and a list of four quoted names: years, rate underscore percent, monthly underscore payment, total underscore interest. Enter."
+L48: "writer dot writerow, an open parenthesis, a list of five quoted names: function, method, input, ns underscore per underscore call, abs underscore error, close parenthesis. Enter."
 ```python
-    writer.writerow(["years", "rate_percent", "monthly_payment", "total_interest"])
+    writer.writerow(["function", "method", "input", "ns_per_call", "abs_error"])
 ```
-Line 16: "Now all my rows: writer, dot, writerows, open parenthesis, rows, close parenthesis. Then Enter twice and Shift and Tab."
+L49: "writer dot writerows, open parenthesis, rows, close parenthesis. Then Enter twice and Shift and Tab."
 ```python
     writer.writerows(rows)
 ```
-Line 18: "Finally a message so I can verify: print, open parenthesis, len of rows, comma, quote, scenarios written, quote, close parenthesis."
+L51: "Finally: print, open parenthesis, len of rows, comma, quote measurements written, quote, close parenthesis."
 ```python
-print(len(rows), "scenarios written")
+print(len(rows), "measurements written")
 ```
 "The script is complete. I will press the Command key and the S key together to save it."
-[Press Cmd+S. Hold 1 second.]
-"Saved. The dot on the tab is gone. I will read the whole script one more time. It loops over four terms and four rates, computes the payment and total interest for each, and writes sixteen rows to a CSV."
+[Cmd+S. Hold 1 second.]
+"Saved. The dot on the tab is gone. In summary, the script times four methods at five inputs, times two softmax versions at three sizes, and records the speed and error of each. That is twenty plus six, so twenty-six measurements."
 "I will close VS Code by clicking the red circle at the top left of its window."
 [Click red. Hold 1 second.]
-"VS Code is closed."
 
-## PART 2. Terminal: run the script and check the CSV (CREATE)
-"My second step is to run the script. I will open Terminal. I will click the Terminal icon in the Dock, the black square with a greater-than sign, because Terminal runs my Python script."
+## PART 2. Terminal: run the benchmark and check the CSV (CREATE)
+"My second step is to run the benchmark. I will click the Terminal icon in the Dock, the black square with a greater-than sign, because Terminal runs my Python script."
 [Click. Hold 1 second.]
-"Terminal opened in a window in the middle of the screen. The prompt shows a neutral user name, and I can still see the menu bar clock and the Dock."
-"I will move into my folder. I will type: c, d, space, Desktop, slash, deliverables, and press Enter."
+"Terminal opened in a window in the middle of the screen with a neutral user name. I can still see the clock and the Dock."
+"I will type: c, d, space, Desktop, slash, deliverables, and press Enter, to move into my folder."
 [Type cd Desktop/deliverables. Enter. Hold 1 second.]
-"I pressed Enter. Nothing was printed, which is normal. The prompt now ends with deliverables, so I am in the right folder."
-"I will list the files to confirm. I will type: l, s, and press Enter."
+"I pressed Enter. Nothing printed, which is normal. The prompt now ends with deliverables."
+"I will type: l, s, and press Enter, to list the files."
 [Type ls. Enter. Hold 1 second.]
-"I pressed Enter. The Terminal printed one file: loan underscore scenarios dot p y. That is my script."
-"Now I will run it. I will type: python3, space, loan underscore scenarios dot p y, and press Enter."
-[Type python3 loan_scenarios.py. Enter. Hold 1 second.]
-"I pressed Enter. The Terminal printed: 16 scenarios written. That means the script ran without errors, and 16 is four terms times four rates."
+"The Terminal printed one file: benchmark dot p y, my script."
+"I will run it. I will type: python3, space, benchmark dot p y, and press Enter. It runs about a hundred thousand calls per test, so it may take a few seconds. I will wait quietly and keep the mouse still."
+[Type python3 benchmark.py. Enter. Wait for it. Hold still.]
+"I pressed Enter and waited. The Terminal printed: 26 measurements written. That means the script ran without errors, and 26 is twenty speed tests for exp and sigmoid plus six for softmax."
 "I will list the files again. I will type l s and press Enter."
 [Type ls. Enter. Hold 1 second.]
-"The Terminal now prints two files: loan underscore scenarios dot csv and loan underscore scenarios dot p y. The CSV was created by my script."
-"I will count its lines. I will type: w, c, space, dash, l, space, loan underscore scenarios dot csv, and press Enter."
-[Type wc -l loan_scenarios.csv. Enter. Hold 1 second.]
-"I pressed Enter. The Terminal printed 17, followed by the file name. That is 16 data rows plus 1 header line, which matches the 16 scenarios."
-"I will close Terminal by clicking the red circle at the top left of its window. If a prompt appears, I will click Terminate."
+"The Terminal now prints two files: benchmark underscore results dot csv and benchmark dot p y. My script created the CSV."
+"I will count the lines. I will type: w, c, space, dash, l, space, benchmark underscore results dot csv, and press Enter."
+[Type wc -l benchmark_results.csv. Enter. Hold 1 second.]
+"The Terminal printed 27, followed by the file name. That is 26 measurements plus 1 header line, which matches the printed message."
+"I will close Terminal by clicking the red circle at the top left. If a prompt appears, I will click Terminate."
 [Click red. Hold 1 second.]
 
-## PART 3. LibreOffice Calc: verify payments with PMT (LOOKUP)
-"My third step is to check my Python results with an independent tool. I will open LibreOffice from the Dock, the white and green document icon, because Calc has a built-in payment function called PMT."
+## PART 3. LibreOffice Calc: inspect the measurements (LOOKUP)
+"My third step is to inspect the results in a spreadsheet. I will click the LibreOffice icon in the Dock, the white and green document icon."
 [Click. Hold 1 second.]
-"The Start Center opened. I will click Open File, in the left column, because I want to open my CSV."
+"In the Start Center I will click Open File, in the left column."
 [Click. Hold 1 second.]
-"In the dialog I will click Desktop in the sidebar, double-click the folder deliverables, then double-click loan underscore scenarios dot csv."
-[Click, double-click, double-click, 1 second after each.]
-"A Text Import window appeared. The Comma separator is checked, which is correct, so I will click OK at the bottom right."
+"In the dialog I will click Desktop in the sidebar, double-click the folder deliverables, then double-click benchmark underscore results dot csv."
+[Click, double-click, double-click. Hold 1 second each.]
+"The Text Import window appeared. Comma is checked, which is correct, so I will click OK at the bottom right."
 [Click OK. Hold 1 second.]
-"The file opened. Column A is years, B is rate percent, C is monthly payment, and D is total interest. Row 1 is the header, and rows 2 to 17 are my 16 scenarios."
-"I will click cell E1, the first empty header cell to the right of column D, because I want to add a check column."
+"The file opened. Column A is the function, B is the method, C is the input value or the vector size, D is the time in nanoseconds per call, and E is the absolute error. Row 1 is the header and rows 2 to 27 are my 26 measurements."
+"I want to find where the approximations fail, so I will sort by error. I will click cell E1, the header of the abs error column, because that is the column I will sort on."
 [Click E1. Hold 1 second.]
-"I will type: PMT check, and press Tab. Then I will type: Difference, and press Enter."
-[Type. Hold 1 second.]
-"Now I will click cell E2, the first data row of the new column."
-[Click E2. Hold 1 second.]
-"I will type this formula: equals, minus, PMT, open parenthesis, B2, slash, 1200, semicolon, A2, times, 12, semicolon, 250000, close parenthesis. This calculates the monthly payment with Calc's own function, using the same rate, term, and loan amount. The minus sign makes the result positive. I press Tab."
-[Type =-PMT(B2/1200;A2*12;250000). Press Tab. Hold 1 second.]
-"I am now in F2. I will type: equals, ROUND, open parenthesis, E2, semicolon, 2, close parenthesis, minus, C2, and press Enter. This rounds the Calc payment to cents and subtracts my Python payment. A result of zero means they match."
-[Type =ROUND(E2;2)-C2. Enter. Hold 1 second.]
-"E2 shows two thousand five hundred ninety dollars and ninety-six cents, and F2 shows zero. The Calc result matches my script."
-"To fill every row, I will click E2 and then hold Shift and click F17, to select the block from E2 to F17."
-[Click E2. Shift-click F17. Hold 1 second.]
-"I will press the Command key and the D key together, which fills the formulas down."
-[Press Cmd+D. Hold 1 second.]
-"I will scroll down with two fingers on the trackpad to check column F. All values in the Difference column are zero, or at most one cent from rounding. This confirms all sixteen Python payments are correct."
-[Scroll slowly. Pause on the last rows.]
+"I will click the Data menu at the top of the screen, then click Sort Descending, or Sort, and choose abs underscore error with Descending."
+[Click Data. Click Sort. In the dialog choose abs_error, Descending. Click OK. Hold 1 second each.]
+"The table is sorted with the largest errors on top. The top row is exp, taylor, input 6, with an error of about 158.8. The next is exp, taylor, input minus 6, with an error of about 31. After those, softmax taylor with 10 values has an error of about 0.63. This tells me the Taylor exp breaks badly far from zero."
+"I will scroll down with two fingers on the trackpad to see the smaller errors."
+[Scroll slowly.]
+"Further down, sigmoid fast has errors up to about 0.069, and every exact method has an error of exactly zero, because I compare it against itself."
+"Next, speed. I will click cell D1 and sort again, but I will look at it rather than sort: the exact exp costs only tens of nanoseconds, while the Taylor exp costs more than three hundred. So the approximation is slower, not faster, in Python."
 
 ## PART 4. LibreOffice Calc: pivot table, chart, and save (CREATE)
-"Next I will summarize total interest by term and rate. I will click cell A1, the top left cell, because I want to start my selection there."
+"Now I will summarize with a pivot table. I will click cell A1, the top left cell."
 [Click A1. Hold 1 second.]
-"I will hold Shift and click cell D17, to select the data from A1 to D17. I am selecting only columns A to D, not the check columns."
-[Shift-click D17. Hold 1 second.]
-"I will click the Insert menu in the menu bar at the top of the screen, then click Pivot Table, then Insert or Edit Pivot Table."
+"I will hold Shift and click cell E27, to select all the data from A1 to E27."
+[Shift-click E27. Hold 1 second.]
+"I will click the Insert menu, then Pivot Table, then Insert or Edit Pivot Table."
 [Click, click, click. Hold 1 second each.]
-"A small window asks for the data source. Current selection is chosen, which is what I want. I will click OK."
+"Current selection is chosen, so I will click OK."
 [Click OK. Hold 1 second.]
-"The Pivot Table Layout window opened. On the right, under Available Fields, I see years, rate underscore percent, monthly underscore payment, and total underscore interest."
-"I will press and hold the mouse on years, drag it into the Row Fields box on the left, and release. This gives one row per loan term."
+"The Pivot Table Layout window opened. I will drag function into the Row Fields box, and then drag method into the Row Fields box under it, so each row is one function and one method."
+[Drag function. Drag method. Hold 1 second.]
+"I will drag ns underscore per underscore call into the Data Fields box. By default it says Sum. I will double-click it, choose Average from the list, and click OK in that small window, because I want the average time, not the total."
+[Drag. Double-click. Select Average. Click OK. Hold 1 second.]
+"Now I will drag abs underscore error into the Data Fields box, double-click it, choose Max, and click OK, because I want the worst error."
+[Drag. Double-click. Select Max. Click OK. Hold 1 second.]
+"The layout shows Average of ns per call and Max of abs error. I will click OK at the bottom of the layout window."
+[Click OK. Hold 1 second.]
+"A new sheet appeared. It lists six rows, one for each function and method. For example: exp exact averages about 85 nanoseconds with a max error of 0. Exp taylor averages about 336 nanoseconds with a max error of about 158.8. Sigmoid exact is about 126, sigmoid fast is about 90 with a max error of 0.069. Softmax exact is about 34,900, and softmax taylor is about 138,400 with a max error of about 0.63. Your numbers may differ slightly, and I will read them from my screen."
+"Now I will add a chart. I will select the method names and the average time column, by clicking the first method cell and dragging to the last average time cell."
 [Drag. Release. Hold 1 second.]
-"I will drag rate underscore percent into the Column Fields box, at the top of the layout. This gives one column per interest rate."
-[Drag. Release. Hold 1 second.]
-"I will drag total underscore interest into the Data Fields box. It appears as Sum of total underscore interest, which is the cost I want to compare. I will click OK at the bottom."
-[Drag. Release. Click OK. Hold 1 second.]
-"A new sheet appeared. The rows are the four terms, the columns are the four rates, and each cell shows total interest. For example, ten years at four and a half percent shows sixty thousand nine hundred fifteen dollars and twenty-three cents. Thirty years at seven and a half percent shows three hundred seventy-nine thousand two hundred ninety-three dollars and six cents."
-"I will now add a chart. I will click and drag across the pivot table, from the top left header to the last data cell, to select it, but not the Total Result row and column."
-[Drag. Release. Hold 1 second.]
-"I will click the Insert menu and click Chart."
+"I will click the Insert menu, then click Chart."
 [Click, click. Hold 1 second.]
-"The Chart Wizard opened. In the list on the left, I will click Line, because a line chart shows how cost changes across terms."
-[Click Line. Hold 1 second.]
-"The preview shows four lines, one for each interest rate. I will click Finish at the bottom."
+"In the Chart Wizard, I will click Bar in the list on the left, because a bar chart compares categories."
+[Click Bar. Hold 1 second.]
+"I will click Finish at the bottom."
 [Click Finish. Hold 1 second.]
-"The line chart appeared. Each line rises as the term gets longer, and the seven and a half percent line is the highest."
+"The bar chart appeared. The softmax bars are much taller than the others, because softmax processes whole lists of numbers instead of a single value. Among single-number functions, the Taylor exp bar is the tallest, and the fast sigmoid bar is shorter than the exact sigmoid bar."
 "To leave chart editing, I will click an empty cell far from the chart."
 [Click. Hold 1 second.]
-"Now I will save the workbook. I will click File in the menu bar, then Save As."
+"I will click File, then Save As."
 [Click, click. Hold 1 second.]
-"In the Name box I will type: loan, underscore, comparison."
+"In the Name box I will type: benchmark, underscore, summary."
 [Type. Hold 1 second.]
-"I will make sure the file type says ODF Spreadsheet, dot o d s. In the sidebar I will click Desktop, double-click the folder deliverables, and click Save. If a prompt asks about the format, I will click Use ODF Format."
+"I will make sure the type says ODF Spreadsheet, dot o d s. In the sidebar I will click Desktop, double-click deliverables, and click Save. If a prompt asks about the format, I will click Use ODF Format."
 [Narrate each click. Hold 1 second each.]
-"The workbook is saved as loan underscore comparison dot o d s. I will close Calc by clicking the red circle at the top left. If the Start Center stays open, I will close it with its red circle too."
+"The workbook is saved as benchmark underscore summary dot o d s. I will close Calc by clicking the red circle at the top left, and close the Start Center the same way if it stays open."
 [Click red. Hold 1 second.]
 
 ## PART 5. Visual Studio Code: write the report (MODIFY)
 "My fifth step is to write the analysis report. I will click the VS Code icon in the Dock."
 [Click. Hold 1 second.]
-"VS Code reopened with the deliverables folder. In the Explorer panel I can see my script, loan underscore scenarios dot p y, and the CSV."
-"I will click the New File icon at the top right of the Explorer panel, because I want a Markdown report."
-[Click. Hold 1 second.]
-"I will type: loan, underscore, report, dot, m, d, and press Enter."
-[Type loan_report.md. Enter. Hold 1 second.]
-"An empty file opened. I will type five lines, saying each one before I type it."
-"Line one: pound sign, space, Loan Report."
-"Line two: Loan amount, colon, 250,000. Scenarios, colon, 4 terms of 10, 15, 20, and 30 years, times 4 rates of 4.5, 5.5, 6.5, and 7.5 percent."
-"Line three: Cheapest overall, colon, 10 years at 4.5 percent, total interest 60,915.23, monthly payment 2,590.96."
-"Line four: Most expensive overall, colon, 30 years at 7.5 percent, total interest 379,293.06, monthly payment 1,748.04."
-"Line five: Trade-off, colon, the 30-year loan has the lowest monthly payment but costs far more in total interest. Recommendation, colon, choose the shortest term the monthly budget can support."
+"VS Code reopened with the deliverables folder. The Explorer panel shows benchmark dot p y and the CSV."
+"I will click the New File icon at the top right of the Explorer panel, type: benchmark, underscore, report, dot, m, d, and press Enter."
+[Click. Type. Enter. Hold 1 second.]
+"An empty file opened. I will type a short report, saying each line before I type it. I will use my own numbers from the pivot table. The numbers below are sample values."
+"Line one: pound sign, space, Benchmark Report."
+"Line two: Speed colon, the exact exp averages about 85 nanoseconds, the Taylor exp about 336, which is about four times slower. The fast sigmoid is about 90 versus about 126 for the exact sigmoid."
+"Line three: Accuracy colon, the Taylor exp has a max error of about 158.8 at x equals 6, the fast sigmoid has a max error of 0.069, and the Taylor softmax has an error of 0.63 at 10 values."
+"Line four: Recommendation colon, in Python the exact math dot exp is both faster and exact, so use the fast sigmoid only where an error of 0.07 is acceptable, and avoid the Taylor exp outside minus 2 to 2."
 ```
-# Loan Report
-Loan amount: 250,000. Scenarios: 4 terms (10, 15, 20, 30 years) x 4 rates (4.5%, 5.5%, 6.5%, 7.5%).
-Cheapest overall: 10 years at 4.5%, total interest 60,915.23, monthly payment 2,590.96.
-Most expensive overall: 30 years at 7.5%, total interest 379,293.06, monthly payment 1,748.04.
-Trade-off: the 30-year loan has the lowest monthly payment but costs far more in total interest. Recommendation: choose the shortest term the monthly budget can support.
+# Benchmark Report
+Speed: exact exp averages about 85 ns, Taylor exp about 336 ns (about 4x slower). Fast sigmoid is about 90 ns versus about 126 ns for exact sigmoid.
+Accuracy: Taylor exp has a max error of about 158.8 at x = 6, fast sigmoid 0.069, and Taylor softmax 0.63 at 10 values.
+Recommendation: in Python the exact math.exp is both faster and exact. Use the fast sigmoid only where an error of 0.07 is acceptable, and avoid the Taylor exp outside -2 to 2.
 ```
 "I will press Command and S to save, then click the red circle at the top left to close VS Code."
 [Cmd+S. Click red. Hold 1 second each.]
 
 ## PART 6. Terminal: confirm every file exists (LOOKUP)
-"My sixth step is to confirm all my files exist. I will click the Terminal icon in the Dock."
+"My sixth step is to confirm my files. I will click the Terminal icon in the Dock."
 [Click. Hold 1 second.]
-"I will type: c d space Desktop slash deliverables, and press Enter. Then I will type l s and press Enter."
+"I will type: c d space Desktop slash deliverables, press Enter, then type l s and press Enter."
 [Type each. Enter. Hold 1 second.]
-"The Terminal printed four files: loan underscore comparison dot o d s, loan underscore report dot m d, loan underscore scenarios dot csv, and loan underscore scenarios dot p y. All four deliverables are present."
+"The Terminal printed four files: benchmark dot p y, benchmark underscore report dot m d, benchmark underscore results dot csv, and benchmark underscore summary dot o d s. All four deliverables exist."
 "I will close Terminal with the red circle at the top left."
 [Click red. Hold 1 second.]
 
@@ -249,40 +344,39 @@ Trade-off: the 30-year loan has the lowest monthly payment but costs far more in
 [Click. Hold 1 second.]
 "In the sidebar I will click Desktop, then double-click the folder deliverables."
 [Click, double-click. Hold 1 second.]
-"The folder contains four files. I will move my mouse over each as I name it."
-"One, loan underscore scenarios dot p y, the Python script that calculates the sixteen scenarios."
-"Two, loan underscore scenarios dot csv, the results, with sixteen rows and a header."
-"Three, loan underscore comparison dot o d s, the workbook with the PMT check, the pivot table, and the line chart."
-"Four, loan underscore report dot m d, my written analysis and recommendation."
+"The folder contains four files. I will move the mouse over each as I name it."
+"One, benchmark dot p y, the Python script that times and compares the methods."
+"Two, benchmark underscore results dot csv, the 26 measurements."
+"Three, benchmark underscore summary dot o d s, the workbook with the pivot table and the bar chart."
+"Four, benchmark underscore report dot m d, my written analysis and recommendation."
 [Mouse rests on the folder. Do not close Finder. Begin the epilogue.]
 
 ## PART 8. Epilogue (3 to 4 minutes, never more than 4)
-Stay on the open deliverables folder. Speak calmly. Do not say you are stopping the recording. Just finish the last sentence.
+Stay on the open deliverables folder. Speak calmly. Do not say you are stopping the recording. Just finish the last sentence. Use your own numbers if they differ.
 
 "This is my epilogue, where I summarize how I did the task and how I checked it.
 
-My goal was to compare loan options for a small business owner. I built a Python script that calculates the monthly payment and total interest for a two hundred fifty thousand dollar loan across four terms and four interest rates, sixteen scenarios in total. I wrote the results to a CSV, checked them in LibreOffice Calc, summarized them with a pivot table and a line chart, and wrote a short report with a recommendation. Everything is in this deliverables folder on the Desktop.
+My goal was to find out whether faster approximations of exp, sigmoid, and softmax are worth the accuracy they give up. I wrote a Python benchmark that times an exact and an approximate version of each, measures the absolute error against the exact answer, and records everything in a CSV. I then sorted and summarized the data in LibreOffice Calc, built a pivot table and a chart, and wrote a report with a recommendation. All files are in this deliverables folder on the Desktop.
 
-First, how I verified the work. In Terminal, the script printed sixteen scenarios written, and the line count of the CSV was seventeen, which is sixteen rows plus the header. In Calc, I recomputed every payment with the built-in PMT function, a separate calculation from my Python formula, and the Difference column showed zero, or at most one cent of rounding. So two independent methods agree on all sixteen payments.
+First, how I verified the work. In Terminal, the script printed twenty-six measurements written, and the CSV had twenty-seven lines, which is twenty-six rows plus the header. The exact methods showed an error of exactly zero, which is a sanity check, because each is compared with itself. I also checked that the errors made sense: the Taylor series is accurate near zero and fails far from it, which is how a six-term series should behave.
 
-Second, my approach. I used a script rather than a manual calculation, because sixteen scenarios are easy to get wrong by hand, and a script can be re-run if the loan amount changes. I kept the program short and readable, with one loop for terms and one for rates. I used the standard fixed-payment loan formula, and I defined total interest as all payments added together, minus the original loan.
+Second, my approach. I measured speed by repeating each call a hundred thousand times and dividing, because a single call is too fast to time reliably. For softmax I used whole vectors of ten, one hundred, and one thousand numbers, and compared against the exact softmax. I used the standard trick of subtracting the largest value first, so the numbers stay stable.
 
-Third, what the numbers show, and the trade-off. A longer term lowers the monthly payment but increases total interest a lot. The cheapest option overall is ten years at four and a half percent, with about sixty thousand nine hundred fifteen dollars of interest, but its payment is the highest, at two thousand five hundred ninety-one dollars a month. The most expensive is thirty years at seven and a half percent, with about three hundred seventy-nine thousand dollars of interest, which is more than the loan itself. Rate matters too: at thirty years, moving from four and a half to seven and a half percent adds about one hundred seventy-three thousand dollars in interest.
+Third, what the results show. The surprise is that, in pure Python, the approximations are mostly not faster. The exact math dot exp is compiled code and takes about eighty-five nanoseconds, while my Taylor version, written in Python, takes about three hundred and thirty-six, around four times slower, and its error reaches about one hundred and fifty-nine at x equals six. The Taylor softmax is also about four times slower. The fast sigmoid is the one real win. It is about thirty percent faster than the exact sigmoid, with a maximum error of about seven hundredths. So the accuracy versus speed trade-off only pays off when the approximation is cheaper than the native function.
 
-Fourth, challenges and quality. The main challenge was getting the monthly rate right, because the formula needs the yearly percent divided by twelve months and by a hundred. A mistake there would make every number wrong, which is why I verified with PMT. The files are simple and open in any program. The chart answers one question, how cost grows with term and rate. With more time, I would add taxes, insurance, and extra payments, and compare scenarios against the owner's monthly budget.
+Fourth, challenges and quality. The main challenge was fair timing: the same repeat count, the same inputs, and the exact result as the reference. Timings also vary a little between runs, so I treat differences of a few percent as noise. The files are simple, the chart compares methods at a glance, and the report states the recommendation in plain words. With more time, I would use NumPy to compare vectorized versions, add more inputs, and repeat the runs to get an error bar on the timings.
 
-Finally, a reflection. This is how an analyst turns a vague question, which loan should I take, into numbers that can be checked, charted, and explained. The recommendation is to choose the shortest term the monthly budget can support. Thank you for watching."
+Finally, a reflection. This is how an engineer decides whether an optimization is worth it: measure speed, measure error, and let the numbers decide. Here the answer is to keep the exact functions, and use the fast sigmoid only where an error of seven hundredths is acceptable. Thank you for watching."
 
 ---
 
 ## Review-feedback self-check (before you submit)
 - Opening under 20 seconds with the exact template; description minimized.
-- Every click narrated (what, where, why), including red close buttons and prompts; mouse still for 1 second after each click.
-- No personal info on screen or in audio: tasker user, neutral Mac name.
-- Dock, clock with seconds, and Accessibility Inspector visible; windows not full screen; no window covering another for more than 30 seconds.
+- Every click narrated (what, where, why), including red close buttons and prompts; mouse still 1 second after each click.
+- No personal info: tasker user, neutral Mac name.
+- Dock, clock with seconds, Accessibility Inspector visible; no window full screen; no window covering another for more than 30 seconds.
 - Commands and results narrated: "I typed ... I pressed Enter. The Terminal printed ..., which means ...".
-- Starting material: none, everything created from scratch and typed live. No clone, no copy-paste.
-- All promised steps and deliverables shown: printed count, wc -l, PMT check, pivot table, chart, loan_comparison.ods, loan_report.md, Finder tour.
-- Epilogue 4 minutes or less, no "stop recording" sentence.
-- Metadata: Request equals the TaskRecorder Goal exactly (the Goal sentence from Part 0), one numbered step list, and this topology: Visual Studio Code (CREATE) > Terminal.app (CREATE) > LibreOffice Calc (LOOKUP) > LibreOffice Calc (CREATE) > Visual Studio Code (MODIFY) > Terminal.app (LOOKUP) > Finder (LOOKUP).
-- The idea text says "line chart comparing payments across terms". The script builds the line chart from the pivot of total interest by term and rate. Reword the idea to say "a line chart comparing total interest across terms and rates" so the recording and the idea match exactly.
+- Starting material: none. No clone, no copy-paste, everything typed live.
+- Every promised item shown: printed count, wc -l, error sort in Calc, pivot, chart, benchmark_summary.ods, benchmark_report.md, Finder tour.
+- Epilogue 4 minutes or less; no "stop recording" sentence.
+- Metadata: Request equals the TaskRecorder Goal exactly; one numbered list; topology: Visual Studio Code (CREATE) > Terminal.app (CREATE) > LibreOffice Calc (LOOKUP) > LibreOffice Calc (CREATE) > Visual Studio Code (MODIFY) > Terminal.app (LOOKUP) > Finder (LOOKUP).
